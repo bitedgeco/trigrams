@@ -15,4 +15,4 @@ def test_split_string_into_words():
 
 def test_make_dict_from_list():
     from trigrams import make_dict_from_list
-    assert make_dict_from_list(['key1a', 'key1b', 'value1', 'key2a', 'key2b', 'value2']) == {"key1a key1b": "value1", "key2a key2b": "value2"}
+    assert make_dict_from_list(['key1a', 'key1b', 'value1', 'key2a', 'key2b', 'value2']) == {"key1a key1b": ["value1"], "key2a key2b": ["value2"]}

@@ -18,8 +18,14 @@ def split_string_into_words(text_string):
 
 def make_dict_from_list(word_list):
     kata_dict = {}
+    kata_value_array = []
     for i in range(0,len(word_list) - 2, 3):
         kata_key = word_list[i] + ' ' + word_list[i + 1]
-        kata_value = word_list[i + 2]
-        kata_dict[kata_key] = kata_value
+        kata_value = kata_value_array.append(word_list[i + 2])
+        kata_dict[kata_key] = 
+        if kata_key in kata_dict.keys:
+            kata_dict[kata_key].append(word_list[i + 2])
+        else:
+            kata_value = kata_value.append(word_list[i + 2])
+            kata_dict[kata_key] = kata_value
     return kata_dict
