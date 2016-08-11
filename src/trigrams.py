@@ -20,14 +20,13 @@ def make_dict_from_list(word_list):
              kata_value = kata_dict.get(kata_key)
         else:
              kata_value = []
-        #import pdb; pdb.set_trace()
         kata_value.append(word_list[i + 2])
         kata_dict[kata_key] = kata_value
     return kata_dict
 
 def make_text_from_dict(first_word_pair, created_dictionary, new_text_length):
     created_text = first_word_pair
-    for i in range (new_text_length - 2):
+    for i in range (int(new_text_length) - 2):
         next_word_list = created_dictionary.get(first_word_pair)
         if next_word_list:
             next_word = next_word_list[0]
@@ -36,6 +35,7 @@ def make_text_from_dict(first_word_pair, created_dictionary, new_text_length):
             first_word_pair = str(created_text_to_list[-2]) + ' ' + str(created_text_to_list[-1])
         else:
             print('stopped')
+            break
     return created_text
 
 
@@ -47,3 +47,12 @@ def main_function(source_path, word_count):
     created_text = make_text_from_dict(first_pair, created_dictionary, word_count)
     print(created_text)
     return created_text
+
+
+if __name__ == '__main__':
+    import sys
+    source_path = sys.argv[1]
+    word_count = sys.argv[2]
+    #print(source_path, word_count, type(source_path))
+    main_function(source_path, word_count)
+
