@@ -1,6 +1,6 @@
 # _*_ coding: utf-8 _*_
 import pytest
-import io
+
 SHERLOCK_SMALL_LIST = ["One",  "night--it", "was", "on", "the", "twentieth", "of", "March,", "1888--I"]
 
 def test_get_text_data():
