@@ -1,4 +1,6 @@
-A trigram algorithm generates text, takes source_text_path and length_of_new_text as input.
+* A trigram algorithm generates text, takes source_text_path and length_of_new_text as input.
 
-User's input:
-$python trigrams.py sherlock.txt 200
+* To demonstrate how the algorithm works, enter:
+```
+$python src/trigrams.py sherlock.txt 200
+```
