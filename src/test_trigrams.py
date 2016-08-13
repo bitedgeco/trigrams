@@ -1,23 +1,46 @@
 # _*_ coding: utf-8 _*_
-import pytest
 
-SHERLOCK_SMALL_LIST = ["One",  "night--it", "was", "on", "the", "twentieth", "of", "March,", "1888--I"]
+
+SHERLOCK_SMALL_LIST = [u"One",  u"night--it", u"was", u"on", u"the",
+                       u"twentieth", u"of", u"March,", u"1888--I"]
+
+
+DICT_OUT = {
+            u"test word": [u"piece", u"hat"],
+            u"word piece": [u"test"],
+            u"piece test": [u"word"]
+            }
+
+
+DICT_IN = {
+            u"test word": [u"piece"],
+            u"word piece": [u"test"],
+            u"piece test": [u"word"]
+            }
+
+
+LIST_IN = [u'test', u'word', u'piece', u'test', u'word', u'hat']
+
+
+TEXT_OUT = u"test word piece test word piece test word piece test"
+
 
 def test_get_text_data():
     from trigrams import get_text_data
-    assert get_text_data('src/sherlock_small.txt') == SHERLOCK_SMALL_LIST
- 
+    assert get_text_data(u'sherlock_small.txt') == SHERLOCK_SMALL_LIST
+
 
 def test_make_dict_from_list():
     from trigrams import make_dict_from_list
-    assert make_dict_from_list(['test', 'word', 'piece', 'test', 'word', 'hat']) == {"test word": ["piece", "hat"], "word piece": ["test"], "piece test": ["word"]}
+    assert make_dict_from_list(LIST_IN) == DICT_OUT
 
 
 def test_make_text_from_dict():
     from trigrams import make_text_from_dict
-    assert make_text_from_dict('test word', {"test word": ["piece"], "word piece": ["test"], "piece test": ["word"]}, 10) == "test word piece test word piece test word piece test"
+    assert make_text_from_dict(u'test word', DICT_IN, 10) == TEXT_OUT
 
 
 def test_main_function():
     from trigrams import main_function
-    assert main_function('src/sherlock_small.txt', 5) == 'One night--it was on the'
+    assert main_function(u'sherlock_small.txt', 5)\
+        == u'One night--it was on the'
