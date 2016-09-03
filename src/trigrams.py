@@ -4,7 +4,7 @@ import io
 
 
 def get_text_data(text):
-    """Return text from a file as a list"""
+    """Return text from a file as a list."""
     input_file = io.open(text, encoding="utf-8")
     text_data = input_file.read()
     input_file.close()
@@ -13,7 +13,7 @@ def get_text_data(text):
 
 
 def make_dict_from_list(word_list):
-    """Return a dictionary created from the source text"""
+    """Return a dictionary created from the source text."""
     kata_dict = {}
     for i in range(len(word_list) - 2):
         kata_key = word_list[i] + ' ' + word_list[i + 1]
@@ -27,7 +27,7 @@ def make_dict_from_list(word_list):
 
 
 def make_text_from_dict(first_word_pair, created_dictionary, new_text_length):
-    """Return text created using the created dictionary"""
+    """Return text created using the created dictionary."""
     import random
     created_text = first_word_pair
     for i in range(int(new_text_length) - 2):
@@ -44,7 +44,7 @@ def make_text_from_dict(first_word_pair, created_dictionary, new_text_length):
 
 
 def main_function(source_path, word_count):
-    """Return newly created text based on the source text and word count"""
+    """Return newly created text based on the source text and word count."""
     text = source_path
     text_data_as_list = get_text_data(text)
     first_pair = get_text_data(text)[0] + ' ' + get_text_data(text)[1]
