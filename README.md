@@ -2,5 +2,5 @@
 
 * To demonstrate how the algorithm works, enter:
 ```
-$python src/trigrams.py sherlock.txt 200
+$python src/trigrams.py ../sherlock.txt 200
 ```
