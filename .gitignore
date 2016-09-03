@@ -90,3 +90,7 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Large text files we dont want on the repo
+sherlock.txt
+src/my_submission.txt
